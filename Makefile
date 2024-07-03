@@ -18,3 +18,6 @@ reinstall:
 
 lint:
 	poetry run flake8 gendiff
+
+compare:
+	poetry run gendiff ./files_to_compare/file1.json ./files_to_compare/file2.json
