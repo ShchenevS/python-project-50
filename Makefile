@@ -4,6 +4,9 @@ install:
 test:
 	poetry run pytest
 
+test_coverage:
+	poetry run pytest --cov
+
 lint:
 	poetry run flake8 gendiff
 
