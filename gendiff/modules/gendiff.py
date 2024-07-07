@@ -21,13 +21,15 @@ def return_diff(file1, file2):
     return result
 
 
+def get_file_from_path(file_path):
+    with open(file_path) as f:
+        file = json.load(f)
+    return file
+
+
 def generate_diff(file_path1, file_path2):
-    #with open('../../files_to_compare/file1.json') as f:
-    with open(file_path1) as f:
-        file1 = json.load(f)
-    #with open('../../files_to_compare/file2.json') as g:
-    with open(file_path2) as g:
-        file2 = json.load(g)
+    file1 = get_file_from_path(file_path1)
+    file2 = get_file_from_path(file_path2)
     list_of_differencies = return_diff(file1, file2)
     result = "{\n"
     for difference in list_of_differencies:
