@@ -22,6 +22,12 @@ jobs:
         run: |
           pip install poetry
           make install
-      - name: Run linter and pytest
+      - name: Run check
         run: |
           make check
+      - name: Run linter
+        run: |
+          make lint
+      - name: Run tests
+        run: |
+          make test
