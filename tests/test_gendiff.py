@@ -1,15 +1,22 @@
 import json
+#import yaml
 from gendiff.modules.gendiff import generate_diff
 from gendiff.modules.gendiff import get_file_from_path
 
 
 def test_get_file_from_path():
-    file_path = './tests/fixtures/file1.json'
-    file = get_file_from_path(file_path)
+    json_file_path = './tests/fixtures/file1.json'
+    json_file = get_file_from_path(json_file_path)
+    yml_file_path = './tests/fixtures/file1.yml'
+    yml_file = get_file_from_path(yml_file_path)
+    yaml_file_path = './tests/fixtures/file1.yaml'
+    yaml_file = get_file_from_path(yaml_file_path)
     correct_file = {
         "host": "hexlet.io",
     }
-    assert file == correct_file
+    assert json_file == correct_file
+    assert yml_file == correct_file
+    assert yaml_file == correct_file
 
 
 def test_generate_diff_no_change():
