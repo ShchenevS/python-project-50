@@ -1,0 +1,8 @@
+result = '{\n'
+result += '  - follow: false\n'
+result += '    host: hexlet.io\n'
+result += '  - proxy: 123.234.53.22\n'
+result += '  - timeout: 50\n'
+result += '  + timeout: 20\n'
+result += '  + verbose: true\n'
+result += '}'

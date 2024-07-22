@@ -1,22 +1,6 @@
-import json
-#import yaml
 from gendiff.modules.gendiff import generate_diff
-from gendiff.modules.gendiff import get_file_from_path
-
-
-def test_get_file_from_path():
-    json_file_path = './tests/fixtures/file1.json'
-    json_file = get_file_from_path(json_file_path)
-    yml_file_path = './tests/fixtures/file1.yml'
-    yml_file = get_file_from_path(yml_file_path)
-    yaml_file_path = './tests/fixtures/file1.yaml'
-    yaml_file = get_file_from_path(yaml_file_path)
-    correct_file = {
-        "host": "hexlet.io",
-    }
-    assert json_file == correct_file
-    assert yml_file == correct_file
-    assert yaml_file == correct_file
+from tests.fixtures.correct_file_3n5step import result as result_3n5step
+from tests.fixtures.correct_file_6step import result as result_6step
 
 
 def test_generate_diff_no_change():
@@ -45,3 +29,31 @@ def test_generate_diff_change():
     file5_path = './tests/fixtures/file5.json'
     correct_file = "{\n  - host: hexlet.io\n  + host: hexlet1.io\n}"
     assert generate_diff(file1_path, file5_path) == correct_file
+
+
+def test_gendiff_3step_complex_json_files():
+    file1_path = './tests/fixtures/file1_3step.json'
+    file2_path = './tests/fixtures/file2_3step.json'
+    correct_file = result_3n5step
+    assert generate_diff(file1_path, file2_path) == correct_file
+
+
+def test_gendiff_5step_complex_yaml_files():
+    file1_path = './tests/fixtures/file1_5step.yaml'
+    file2_path = './tests/fixtures/file2_5step.yml'
+    correct_file = result_3n5step
+    assert generate_diff(file1_path, file2_path) == correct_file
+
+
+def test_gendiff_6step_complex_json_files():
+    file1_path = './tests/fixtures/file1_6step.json'
+    file2_path = './tests/fixtures/file2_6step.json'
+    correct_file = result_6step
+    assert generate_diff(file1_path, file2_path) == correct_file
+
+
+def test_gendiff_6step_complex_yaml_files():
+    file1_path = './tests/fixtures/file1_6step.yml'
+    file2_path = './tests/fixtures/file2_6step.yaml'
+    correct_file = result_6step
+    assert generate_diff(file1_path, file2_path) == correct_file

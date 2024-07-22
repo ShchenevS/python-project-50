@@ -6,3 +6,6 @@ project2.cast1
 gendiff/modules/__pycache__/
 tests/__pycache__/
 project2.cast2
+project2.cast3
+tests/fixtures/__pycache__/
+gendiff/modules/formatters/__pycache__/

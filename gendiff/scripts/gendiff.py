@@ -4,7 +4,10 @@ from gendiff.modules.gendiff import generate_diff
 
 
 def main():
-    diff = generate_diff(parser.args.first_file, parser.args.second_file)
+    diff = generate_diff(
+        parser.args.first_file,
+        parser.args.second_file,
+        parser.args.FORMAT)
     print(diff)
 
 

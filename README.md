@@ -10,3 +10,6 @@ Formats of supported files are:
 <a href="https://asciinema.org/a/P9S6EfwnmES9QFb2KqXu9tKBW" target="_blank"><img src="https://asciinema.org/a/P9S6EfwnmES9QFb2KqXu9tKBW.svg" /></a>
  - *.yml and *.yaml-files:
 <a href="https://asciinema.org/a/OkAMZW3DlH5ab1zCTFOtoKlgm" target="_blank"><img src="https://asciinema.org/a/OkAMZW3DlH5ab1zCTFOtoKlgm.svg" /></a>
+
+Example of stylish-format:
+<a href="https://asciinema.org/a/pCBfT0M63na98hHEwfWFtDsLl" target="_blank"><img src="https://asciinema.org/a/pCBfT0M63na98hHEwfWFtDsLl.svg" /></a>

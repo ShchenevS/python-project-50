@@ -25,8 +25,11 @@ package-install:
 reinstall:
 	python3 -m pip install --user --force-reinstall dist/*.whl
 
-gendiff:
-	poetry run gendiff
-
-compare:
+compare-1-2:
 	poetry run gendiff ./files_to_compare/file1.json ./files_to_compare/file2.json
+
+compare-3-4:
+	poetry run gendiff ./files_to_compare/file3.json ./files_to_compare/file4.json
+
+compare-3-4-yml:
+	poetry run gendiff ./files_to_compare/file3.yml ./files_to_compare/file4.yaml
