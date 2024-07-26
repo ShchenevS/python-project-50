@@ -54,11 +54,11 @@ def make_a_string(node, position):
 
 def show_the_difference(tree):
     def inner(node):
-        if (node.get('status1') == 'deleted' and not node.get('status2')
+        if (node.get('status1') == 'deleted'
                 or node.get('type1') == node.get('type2')
                 and node.get('status1') == 'unchanged'):
             return make_a_string(node, 1)
-        if node.get('status2') == 'added' and not node.get('status1'):
+        if node.get('status2') == 'added':
             return make_a_string(node, 2)
         else:
             return (make_a_string(node, 1) + make_a_string(node, 2))

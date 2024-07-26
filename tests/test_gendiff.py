@@ -1,6 +1,7 @@
 from gendiff.modules.gendiff import generate_diff
 from tests.fixtures.correct_file_3n5step import result as result_3n5step
 from tests.fixtures.correct_file_6step import result as result_6step
+from tests.fixtures.correct_file_7step import result as result_7step
 
 
 def test_generate_diff_no_change():
@@ -57,3 +58,10 @@ def test_gendiff_6step_complex_yaml_files():
     file2_path = './tests/fixtures/file2_6step.yaml'
     correct_file = result_6step
     assert generate_diff(file1_path, file2_path) == correct_file
+
+
+def test_gendiff_7step_complex_json_files():
+    file1_path = './tests/fixtures/file1_6step.json'
+    file2_path = './tests/fixtures/file2_6step.json'
+    correct_file = result_7step
+    assert generate_diff(file1_path, file2_path, 'plain') == correct_file

@@ -13,3 +13,6 @@ Formats of supported files are:
 
 Example of stylish-format:
 <a href="https://asciinema.org/a/pCBfT0M63na98hHEwfWFtDsLl" target="_blank"><img src="https://asciinema.org/a/pCBfT0M63na98hHEwfWFtDsLl.svg" /></a>
+
+Example of plain-format:
+<a href="https://asciinema.org/a/MsVOth2cy3ot7qnYF6Weg9nBK" target="_blank"><img src="https://asciinema.org/a/MsVOth2cy3ot7qnYF6Weg9nBK.svg" /></a>

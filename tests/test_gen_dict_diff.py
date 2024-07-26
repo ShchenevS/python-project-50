@@ -34,7 +34,7 @@ def test_get_status():
     assert get_status(file1, file2, 'group2',
                       'directory', 'nevermind') == ('deleted', None)
     assert get_status(file1['group1'], file2['group1'], 'nest',
-                      'directory', 'file') == ('deleted', 'added')
+                      'directory', 'file') == ('changed', 'changed')
     assert get_status(file1['common'], file2['common'], 'setting1',
                       'file', 'file') == ('unchanged', 'unchanged')
     assert get_status(file1['common'], file2['common'], 'setting3',

@@ -23,10 +23,8 @@ def get_status(file1, file2, key, type1, type2):
         return (None, 'added')
     if key not in file2:
         return ('deleted', None)
-    if not type1 == type2:
-        return ('deleted', 'added')
-    if (type1 == 'directory' or type1 == 'file'
-            and file1.get(key) == file2.get(key)):
+    if type1 == type2 and (type1 == 'directory' or type1 == 'file'
+                           and file1.get(key) == file2.get(key)):
         return ('unchanged', 'unchanged')
     else:
         return ('changed', 'changed')
