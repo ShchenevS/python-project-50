@@ -3,6 +3,7 @@ from gendiff.modules.gen_dict_diff import gen_dict_diff
 from gendiff.modules.gen_dict_diff import add_depth
 from gendiff.modules.formatters import stylish
 from gendiff.modules.formatters import plain
+from gendiff.modules.formatters import json_f
 
 
 def make_string_diff(dict_of_differencies):
@@ -30,4 +31,6 @@ def generate_diff(file_path1, file_path2, format='stylish'):
         string_of_diff = stylish.show_the_difference(dict_of_diff_with_depth)
     if format == 'plain':
         string_of_diff = plain.show_the_difference(dict_of_diff_with_depth)
+    if format == 'json':
+        string_of_diff = json_f.show_the_difference(dict_of_diff_with_depth)
     return string_of_diff
