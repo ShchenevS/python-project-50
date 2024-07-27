@@ -16,3 +16,6 @@ Example of stylish-format:
 
 Example of plain-format:
 <a href="https://asciinema.org/a/MsVOth2cy3ot7qnYF6Weg9nBK" target="_blank"><img src="https://asciinema.org/a/MsVOth2cy3ot7qnYF6Weg9nBK.svg" /></a>
+
+Example of json-format:
+<a href="https://asciinema.org/a/cVTkFyobp1OsWSwiADwmBa33G" target="_blank"><img src="https://asciinema.org/a/cVTkFyobp1OsWSwiADwmBa33G.svg" /></a>
