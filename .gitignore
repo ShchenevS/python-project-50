@@ -10,4 +10,18 @@ project2.cast3
 tests/fixtures/__pycache__/
 gendiff/modules/formatters/__pycache__/
 coverage.xml
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
 .coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
