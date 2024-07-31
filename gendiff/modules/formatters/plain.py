@@ -1,7 +1,7 @@
 from gendiff.modules.constant import BEGIN_FOR_PLAIN
 
 
-def get_value_for_plain(node, value, type):
+def get_value_for_plain(node, value):
     match node.get(value):
         case None:
             return 'null'
@@ -10,15 +10,17 @@ def get_value_for_plain(node, value, type):
         case False:
             return 'false'
         case _:
-            if node.get(type) == 'directory':
+            if type(node.get(value)) is list:
                 return '[complex value]'
-            else:
+            elif type(node.get(value)) is str:
                 return f"'{str(node.get(value))}'"
+            else:
+                return str(node.get(value))
 
 
 def get_spec_symbol(node):
-    value_1 = get_value_for_plain(node, 'value1', 'type1')
-    value_2 = get_value_for_plain(node, 'value2', 'type2')
+    value_1 = get_value_for_plain(node, 'value1')
+    value_2 = get_value_for_plain(node, 'value2')
     match node.get('status1'):
         case None:
             return (" was added with value: " + value_2)
