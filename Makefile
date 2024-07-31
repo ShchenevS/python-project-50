@@ -5,7 +5,7 @@ test:
 	poetry run pytest
 
 test_coverage:
-	poetry run pytest --cov
+	poetry run pytest --cov=gendiff
 
 lint:
 	poetry run flake8 gendiff

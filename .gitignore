@@ -9,3 +9,5 @@ project2.cast2
 project2.cast3
 tests/fixtures/__pycache__/
 gendiff/modules/formatters/__pycache__/
+coverage.xml
+.coverage
