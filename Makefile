@@ -33,3 +33,4 @@ compare-3-4:
 
 compare-3-4-yml:
 	poetry run gendiff ./files_to_compare/file3.yml ./files_to_compare/file4.yaml
+
