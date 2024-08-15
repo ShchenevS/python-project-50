@@ -1,4 +1,5 @@
-from gendiff.modules.get_dict import get_dict_from_link
+import os
+from gendiff.modules.parser import parse
 from gendiff.modules.gen_dict_diff import gen_dict_diff
 from gendiff.modules.gen_dict_diff import add_depth
 from gendiff.modules.formatters import stylish
@@ -22,9 +23,19 @@ def make_string_diff(dict_of_differencies):
     return result
 
 
+def get_file_type(file_path):
+    extention = os.path.splitext(file_path)[1]
+    if extention == ".json":
+        return 'json'
+    elif extention == ".yaml" or extention == ".yml":
+        return 'yaml'
+
+
 def generate_diff(file_path1, file_path2, format="stylish"):
-    dict1 = get_dict_from_link(file_path1)
-    dict2 = get_dict_from_link(file_path2)
+    file_type1 = get_file_type(file_path1)
+    file_type2 = get_file_type(file_path2)
+    dict1 = parse(file_path1, file_type1)
+    dict2 = parse(file_path2, file_type2)
     dict_of_diff = gen_dict_diff(dict1, dict2)
     dict_of_diff_with_depth = add_depth(dict_of_diff)
     if format == 'stylish':

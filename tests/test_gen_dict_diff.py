@@ -1,4 +1,5 @@
-from gendiff.modules.get_dict import get_dict_from_link
+from gendiff.modules.gendiff import get_file_type
+from gendiff.modules.parser import parse
 from gendiff.modules.gen_dict_diff import make_dict
 from gendiff.modules.gen_dict_diff import get_items
 from gendiff.modules.gen_dict_diff import get_status
@@ -26,9 +27,9 @@ def test_get_items():
 
 def test_get_status():
     file1_path = './tests/fixtures/file1_6step.json'
-    file1 = get_dict_from_link(file1_path)
+    file1 = parse(file1_path, get_file_type(file1_path))
     file2_path = './tests/fixtures/file2_6step.json'
-    file2 = get_dict_from_link(file2_path)
+    file2 = parse(file2_path, get_file_type(file2_path))
     assert get_status(file1, file2, 'group3',
                       'nevermind', 'directory') == (None, 'added')
     assert get_status(file1, file2, 'group2',
@@ -45,9 +46,9 @@ def test_get_status():
 
 def test_gen_dict_diff():
     file1_path = './tests/fixtures/file1_for_test_gen_diff.json'
-    file1 = get_dict_from_link(file1_path)
+    file1 = parse(file1_path, get_file_type(file1_path))
     file2_path = './tests/fixtures/file2_for_test_gen_diff.json'
-    file2 = get_dict_from_link(file2_path)
+    file2 = parse(file2_path, get_file_type(file2_path))
     assert gen_dict_diff(file1, file2) == gen_diff_result
 
 

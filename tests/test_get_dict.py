@@ -1,16 +1,30 @@
-from gendiff.modules.get_dict import get_dict_from_link
+import pytest
+from gendiff.modules.gendiff import get_file_type
+from gendiff.modules.parser import parse
 
 
-def test_get_dict_from_link():
-    json_file_path = './tests/fixtures/file1.json'
-    json_file = get_dict_from_link(json_file_path)
-    yml_file_path = './tests/fixtures/file1.yml'
-    yml_file = get_dict_from_link(yml_file_path)
-    yaml_file_path = './tests/fixtures/file1.yaml'
-    yaml_file = get_dict_from_link(yaml_file_path)
-    correct_file = {
-        "host": "hexlet.io",
-    }
-    assert json_file == correct_file
-    assert yml_file == correct_file
-    assert yaml_file == correct_file
+file_json = './tests/fixtures/file1.json'
+file_yaml = './tests/fixtures/file1.yaml'
+file_yml = './tests/fixtures/file1.yml'
+correct_file = {"host": "hexlet.io"}
+testdata1 = [
+    (file_json, 'json'),
+    (file_yaml, 'yaml'),
+    (file_yml, 'yaml')
+]
+testdata2 = [
+    (file_json, correct_file),
+    (file_yaml, correct_file)
+]
+
+
+@pytest.mark.parametrize("link,expected", testdata1)
+def test_get_file_type(link, expected):
+    type_ = get_file_type(link)
+    assert type_ == expected
+
+
+@pytest.mark.parametrize("link,expected", testdata2)
+def test_parse(link, expected):
+    dictionary = parse(link, get_file_type(link))
+    assert dictionary == expected
