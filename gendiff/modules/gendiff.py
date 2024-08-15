@@ -22,7 +22,7 @@ def make_string_diff(dict_of_differencies):
     return result
 
 
-def generate_diff(file_path1, file_path2, format):
+def generate_diff(file_path1, file_path2, format="stylish"):
     dict1 = get_dict_from_link(file_path1)
     dict2 = get_dict_from_link(file_path2)
     dict_of_diff = gen_dict_diff(dict1, dict2)
